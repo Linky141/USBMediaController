@@ -1,0 +1,51 @@
+﻿<Window x:Class="USBMediaController.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"   
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:local="clr-namespace:USBMediaController"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+
+    <Window.Resources>
+        <XmlDataProvider x:Key="ComPorts" Source="CommsData.xml" XPath="/Comms/Ports" />
+        <XmlDataProvider x:Key="ComSpeed" Source="CommsData.xml" XPath="/Comms/Baud" />
+    </Window.Resources>
+
+
+    
+    <Grid>
+        <Button x:Name="btn_ConnectionSettings" Content="ustawienia połączenia" HorizontalAlignment="Left" Margin="276,10,0,0" VerticalAlignment="Top" Width="181" Click="btn_ConnectionSettings_Click"/>
+        <Button x:Name="btn_CommandSettings" Content="ustawienia zawartości" HorizontalAlignment="Left" Margin="276,47,0,0" VerticalAlignment="Top" Width="181" Click="btn_CommandSettings_Click"/>
+        <Button x:Name="btn_connect" Content="Połącz" HorizontalAlignment="Left" Margin="601,324,0,0" VerticalAlignment="Top" Width="181" Click="btn_connect_Click" Height="85"/>
+        <TextBox x:Name="tbx_console" HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="374" Width="261" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsEnabled="False"/>
+        <Label Content="Console" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="261"/>
+        <tb:TaskbarIcon x:Name="tray_main"  ToolTipText="hello world" >
+            <tb:TaskbarIcon.TrayToolTip>
+                <Border Background="DarkCyan" BorderBrush="Black" BorderThickness="1" CornerRadius="20" Width="160" Height="40">
+                    <Label x:Name="tbx_trayInfo" Content="TEST xD" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                </Border>
+            </tb:TaskbarIcon.TrayToolTip>
+            <tb:TaskbarIcon.TrayPopup>
+                <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" CornerRadius="40" Width="160"  Height="100">
+                    <Grid>
+                        <Button x:Name="btn_trayShow" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,-40,0,0"/>
+                        <Button x:Name="btn_trayClose" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,40,0,0" Click="btn_trayClose_Click"/>
+                    </Grid>
+                </Border>
+            </tb:TaskbarIcon.TrayPopup>
+        </tb:TaskbarIcon>
+    </Grid>
+    
+</Window>
