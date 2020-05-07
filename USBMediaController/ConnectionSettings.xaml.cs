@@ -19,10 +19,20 @@ namespace USBMediaController
     /// </summary>
     public partial class ConnectionSettings : Window
     {
-        public ConnectionSettings()
+        public ConnectionSettings(Containter_ConnectionInfo connectionInfo)
         {
+            this.connectionInfo = connectionInfo;
             InitializeComponent();
             FillCombobox();
+
+            cbx_portName.SelectedValue = this.connectionInfo.getPortName();
+            cbx_baudrate.SelectedValue = this.connectionInfo.getBaudRate().ToString();
+            cbx_handshake.SelectedValue = this.connectionInfo.getHandshake().ToString();
+            cbx_parity.SelectedValue = this.connectionInfo.getParity().ToString();
+            cbx_dataBits.SelectedValue = this.connectionInfo.getDataBits();
+            cbx_stopBits.SelectedValue = this.connectionInfo.getStopBits().ToString();
+            tbx_readTimeout.Text = this.connectionInfo.getReadTimeout().ToString();
+            tbx_writeTimeout.Text = this.connectionInfo.getWriteTimeout().ToString();
         }
 
         /*
@@ -51,10 +61,10 @@ namespace USBMediaController
             acceptChanges = true;
             connectionInfo.setPortName(cbx_portName.Text);
             connectionInfo.setBaudRate(Int32.Parse(cbx_baudrate.Text));
-            connectionInfo.setHandshake((System.IO.Ports.Handshake)cbx_handshake.SelectedItem);
-            connectionInfo.setParity((System.IO.Ports.Parity)cbx_parity.SelectedItem);
+            connectionInfo.setHandshake(cbx_handshake.Text);
+            connectionInfo.setParity(cbx_parity.Text);
             connectionInfo.setDataBits(Int32.Parse(cbx_dataBits.Text));
-            connectionInfo.setStopBits((System.IO.Ports.StopBits)cbx_stopBits.SelectedItem);
+            connectionInfo.setStopBits(cbx_stopBits.Text);
             connectionInfo.setReadTimeout(Int32.Parse(tbx_readTimeout.Text));
             connectionInfo.setWriteTimeout(Int32.Parse(tbx_writeTimeout.Text));
             connectionInfo.SetSerial();
@@ -70,23 +80,23 @@ namespace USBMediaController
 
         private void FillCombobox()
         {
-            cbx_handshake.Items.Add(System.IO.Ports.Handshake.None);
-            cbx_handshake.Items.Add(System.IO.Ports.Handshake.RequestToSend);
-            cbx_handshake.Items.Add(System.IO.Ports.Handshake.RequestToSendXOnXOff);
-            cbx_handshake.Items.Add(System.IO.Ports.Handshake.XOnXOff);
+            cbx_handshake.Items.Add(System.IO.Ports.Handshake.None.ToString());
+            cbx_handshake.Items.Add(System.IO.Ports.Handshake.RequestToSend.ToString());
+            cbx_handshake.Items.Add(System.IO.Ports.Handshake.RequestToSendXOnXOff.ToString());
+            cbx_handshake.Items.Add(System.IO.Ports.Handshake.XOnXOff.ToString());
 
-            cbx_parity.Items.Add(System.IO.Ports.Parity.Even);
-            cbx_parity.Items.Add(System.IO.Ports.Parity.Mark);
-            cbx_parity.Items.Add(System.IO.Ports.Parity.None);
-            cbx_parity.Items.Add(System.IO.Ports.Parity.Odd);
-            cbx_parity.Items.Add(System.IO.Ports.Parity.Space);
+            cbx_parity.Items.Add(System.IO.Ports.Parity.Even.ToString());
+            cbx_parity.Items.Add(System.IO.Ports.Parity.Mark.ToString());
+            cbx_parity.Items.Add(System.IO.Ports.Parity.None.ToString());
+            cbx_parity.Items.Add(System.IO.Ports.Parity.Odd.ToString());
+            cbx_parity.Items.Add(System.IO.Ports.Parity.Space.ToString());
 
             for (int clk = 0; clk < 11; clk++) cbx_dataBits.Items.Add(clk);
 
-            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.None);
-            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.One);
-            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.OnePointFive);
-            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.Two);
+            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.None.ToString());
+            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.One.ToString());
+            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.OnePointFive.ToString());
+            cbx_stopBits.Items.Add(System.IO.Ports.StopBits.Two.ToString());
 
         }
 

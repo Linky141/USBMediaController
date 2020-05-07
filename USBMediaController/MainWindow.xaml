@@ -14,7 +14,7 @@
         xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:USBMediaController"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="417.483" Width="788.462" ResizeMode="NoResize" WindowStyle="None" MouseDown="Window_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen">
 
 
 
@@ -24,7 +24,7 @@
     </Window.Resources>
 
 
-    
+
     <Grid>
         <Button x:Name="btn_ConnectionSettings" Content="ustawienia połączenia" HorizontalAlignment="Left" Margin="276,10,0,0" VerticalAlignment="Top" Width="181" Click="btn_ConnectionSettings_Click"/>
         <Button x:Name="btn_CommandSettings" Content="ustawienia zawartości" HorizontalAlignment="Left" Margin="276,47,0,0" VerticalAlignment="Top" Width="181" Click="btn_CommandSettings_Click"/>
@@ -40,12 +40,15 @@
             <tb:TaskbarIcon.TrayPopup>
                 <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" CornerRadius="40" Width="160"  Height="100">
                     <Grid>
-                        <Button x:Name="btn_trayShow" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,-40,0,0"/>
+                        <Button x:Name="btn_trayShow" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,-40,0,0" Click="btn_trayShow_Click"/>
                         <Button x:Name="btn_trayClose" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,40,0,0" Click="btn_trayClose_Click"/>
                     </Grid>
                 </Border>
             </tb:TaskbarIcon.TrayPopup>
         </tb:TaskbarIcon>
+        <Button x:Name="btn_close" Content="X" HorizontalAlignment="Left" Margin="728,10,0,0" VerticalAlignment="Top" Width="50" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Click="btn_close_Click"/>
+        <Button x:Name="btn_minimalise" Content="_" HorizontalAlignment="Left" Margin="673,10,0,0" VerticalAlignment="Top" Width="50" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Click="btn_minimalise_Click"/>
+        <Button x:Name="btn_hideToTray" Content="V" HorizontalAlignment="Left" Margin="618,10,0,0" VerticalAlignment="Top" Width="50" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Click="btn_hideToTray_Click"/>
     </Grid>
-    
+
 </Window>
