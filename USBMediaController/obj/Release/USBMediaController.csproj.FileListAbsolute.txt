@@ -24,3 +24,8 @@ C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\U
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\USBMediaController.csproj.CopyComplete
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\USBMediaController.exe
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\USBMediaController.pdb
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\USBMediaController.csprojAssemblyReference.cache
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\ControlerConfigAddItem.g.cs
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\ControllerConfig.g.cs
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\ControlerConfigAddItem.baml
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Release\ControllerConfig.baml

@@ -23,7 +23,7 @@
         <ComboBox x:Name="cbx_portName" HorizontalAlignment="Left" Margin="110,16,0,0" VerticalAlignment="Top" Width="148" ItemsSource="{Binding Source={StaticResource ComPorts}}"/>
         <Label Content="Baudrate" HorizontalAlignment="Left" Margin="0,49,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbx_baudrate" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Width="148" ItemsSource="{Binding Source={StaticResource ComSpeed}}"/>
-        <Button x:Name="btn_apply" Content="Apply" HorizontalAlignment="Left" Margin="9,294,0,0" VerticalAlignment="Top" Width="125" Click="btn_apply_Click"/>
+        <Button x:Name="btn_apply" Content="Apply" HorizontalAlignment="Left" Margin="9,294,0,0" VerticalAlignment="Top" Width="125" Click="btn_apply_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
         <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="139,294,0,0" VerticalAlignment="Top" Width="122" Click="btn_cancel_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
         <Label Content="Handshake" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbx_handshake" HorizontalAlignment="Left" Margin="110,78,0,0" VerticalAlignment="Top" Width="148"/>

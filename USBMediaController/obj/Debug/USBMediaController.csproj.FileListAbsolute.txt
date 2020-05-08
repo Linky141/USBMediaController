@@ -25,3 +25,7 @@ C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\U
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
 C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Debug\ControlerConfigAddItem.g.cs
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Debug\ControllerConfig.g.cs
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Debug\ControlerConfigAddItem.baml
+C:\Users\Tomasz Bielas\Documents\Programowanie\VisualStudio\USBMediaController\USBMediaController\obj\Debug\ControllerConfig.baml

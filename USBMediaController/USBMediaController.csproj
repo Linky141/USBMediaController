@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
@@ -49,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,6 +75,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ControlerConfigAddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControllerConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,7 +94,15 @@
     <Compile Include="ConnectionSettings.xaml.cs">
       <DependentUpon>ConnectionSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Container_ControllerConfig.cs" />
+    <Compile Include="Container_SingleCommand.cs" />
     <Compile Include="Containter_ConnectionInfo.cs" />
+    <Compile Include="ControlerConfigAddItem.xaml.cs">
+      <DependentUpon>ControlerConfigAddItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerConfig.xaml.cs">
+      <DependentUpon>ControllerConfig.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -117,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CommsData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asets\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asets\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
