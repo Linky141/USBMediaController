@@ -1,0 +1,131 @@
+﻿<Window x:Class="USBMediaController.ControllerConfig"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"   
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:USBMediaController"
+        mc:Ignorable="d"
+        Title="ControllerConfig" Height="744.207" Width="1144.276" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" MouseDown="Window_MouseDown">
+    <Grid>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,43,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,208,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,373,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,538,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
+        <Label Content="Profile" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139"/>
+        <ComboBox x:Name="cbx_profile" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="737"/>
+        <Button x:Name="btn_profileSave" Content="Save" HorizontalAlignment="Left" Margin="980,6,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileSave_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+        <Button x:Name="btn_profileDelete" Content="Delete" HorizontalAlignment="Left" Margin="1060,6,0,0" VerticalAlignment="Top" Width="75"  Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+        <Label Content="Field 1 action" HorizontalAlignment="Left" Margin="23,66,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f1p1Action" HorizontalAlignment="Left" Margin="29,95,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f1p1Action" HorizontalAlignment="Left" Height="23" Margin="154,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f1p1Manual" Content="Manual" HorizontalAlignment="Left" Margin="154,128,0,0" VerticalAlignment="Top" Checked="chk_f1p1Manual_Checked" Unchecked="chk_f1p1Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f1p1Description" HorizontalAlignment="Left" Height="23" Margin="107,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="29,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 2 action" HorizontalAlignment="Left" Margin="300,66,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f2p1Action" HorizontalAlignment="Left" Margin="306,95,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f2p1Action" HorizontalAlignment="Left" Height="23" Margin="431,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f2p1Manual" Content="Manual" HorizontalAlignment="Left" Margin="431,128,0,0" VerticalAlignment="Top" Checked="chk_f2p1Manual_Checked" Unchecked="chk_f2p1Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f2p1Description" HorizontalAlignment="Left" Height="23" Margin="384,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="306,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 3 action" HorizontalAlignment="Left" Margin="585,66,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f3p1Action" HorizontalAlignment="Left" Margin="591,95,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f3p1Action" HorizontalAlignment="Left" Height="23" Margin="716,100,-36,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f3p1Manual" Content="Manual" HorizontalAlignment="Left" Margin="716,128,0,0" VerticalAlignment="Top" Checked="chk_f3p1Manual_Checked" Unchecked="chk_f3p1Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f3p1Description" HorizontalAlignment="Left" Height="23" Margin="669,151,-36,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="591,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 4 action" HorizontalAlignment="Left" Margin="851,74,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f4p1Action" HorizontalAlignment="Left" Margin="857,103,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f4p1Action" HorizontalAlignment="Left" Height="23" Margin="982,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f4p1Manual" Content="Manual" HorizontalAlignment="Left" Margin="982,136,0,0" VerticalAlignment="Top" Checked="chk_f4p1Manual_Checked" Unchecked="chk_f4p1Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f4p1Description" HorizontalAlignment="Left" Height="23" Margin="935,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="857,161,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 1 action" HorizontalAlignment="Left" Margin="17,236,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f1p2Action" HorizontalAlignment="Left" Margin="23,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f1p2Action" HorizontalAlignment="Left" Height="23" Margin="148,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f1p2Manual" Content="Manual" HorizontalAlignment="Left" Margin="148,298,0,0" VerticalAlignment="Top" Checked="chk_f1p2Manual_Checked" Unchecked="chk_f1p2Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f1p2Description" HorizontalAlignment="Left" Height="23" Margin="101,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 2 action" HorizontalAlignment="Left" Margin="294,236,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f2p2Action" HorizontalAlignment="Left" Margin="300,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f2p2Action" HorizontalAlignment="Left" Height="23" Margin="425,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f2p2Manual" Content="Manual" HorizontalAlignment="Left" Margin="425,298,0,0" VerticalAlignment="Top" Checked="chk_f2p2Manual_Checked" Unchecked="chk_f2p2Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f2p2Description" HorizontalAlignment="Left" Height="23" Margin="378,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="300,323,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 3 action" HorizontalAlignment="Left" Margin="579,236,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f3p2Action" HorizontalAlignment="Left" Margin="585,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f3p2Action" HorizontalAlignment="Left" Height="23" Margin="710,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f3p2Manual" Content="Manual" HorizontalAlignment="Left" Margin="710,298,0,0" VerticalAlignment="Top" Checked="chk_f3p2Manual_Checked" Unchecked="chk_f3p2Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f3p2Description" HorizontalAlignment="Left" Height="23" Margin="663,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="585,323,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 4 action" HorizontalAlignment="Left" Margin="845,244,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f4p2Action" HorizontalAlignment="Left" Margin="851,273,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f4p2Action" HorizontalAlignment="Left" Height="23" Margin="976,278,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f4p2Manual" Content="Manual" HorizontalAlignment="Left" Margin="976,306,0,0" VerticalAlignment="Top" Checked="chk_f4p2Manual_Checked" Unchecked="chk_f4p2Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f4p2Description" HorizontalAlignment="Left" Height="23" Margin="929,329,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="851,331,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 1 action" HorizontalAlignment="Left" Margin="17,410,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f1p3Action" HorizontalAlignment="Left" Margin="23,439,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f1p3Action" HorizontalAlignment="Left" Height="23" Margin="148,444,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f1p3Manual" Content="Manual" HorizontalAlignment="Left" Margin="148,472,0,0" VerticalAlignment="Top" Checked="chk_f1p3Manual_Checked" Unchecked="chk_f1p3Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f1p3Description" HorizontalAlignment="Left" Height="23" Margin="101,495,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="23,497,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 2 action" HorizontalAlignment="Left" Margin="294,410,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f2p3Action" HorizontalAlignment="Left" Margin="300,439,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f2p3Action" HorizontalAlignment="Left" Height="23" Margin="425,444,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f2p3Manual" Content="Manual" HorizontalAlignment="Left" Margin="425,472,0,0" VerticalAlignment="Top" Checked="chk_f2p3Manual_Checked" Unchecked="chk_f2p3Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f2p3Description" HorizontalAlignment="Left" Height="23" Margin="378,495,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="300,497,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 3 action" HorizontalAlignment="Left" Margin="579,410,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f3p3Action" HorizontalAlignment="Left" Margin="585,439,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f3p3Action" HorizontalAlignment="Left" Height="23" Margin="710,444,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f3p3Manual" Content="Manual" HorizontalAlignment="Left" Margin="710,472,0,0" VerticalAlignment="Top" Checked="chk_f3p3Manual_Checked" Unchecked="chk_f3p3Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f3p3Description" HorizontalAlignment="Left" Height="23" Margin="663,495,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="585,497,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 4 action" HorizontalAlignment="Left" Margin="845,418,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f4p3Action" HorizontalAlignment="Left" Margin="851,447,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f4p3Action" HorizontalAlignment="Left" Height="23" Margin="976,452,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f4p3Manual" Content="Manual" HorizontalAlignment="Left" Margin="976,480,0,0" VerticalAlignment="Top" Checked="chk_f4p3Manual_Checked" Unchecked="chk_f4p3Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f4p3Description" HorizontalAlignment="Left" Height="23" Margin="929,503,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="851,505,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 1 action" HorizontalAlignment="Left" Margin="17,552,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f1p4Action" HorizontalAlignment="Left" Margin="23,581,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f1p4Action" HorizontalAlignment="Left" Height="23" Margin="148,586,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f1p4Manual" Content="Manual" HorizontalAlignment="Left" Margin="148,614,0,0" VerticalAlignment="Top" Checked="chk_f1p4Manual_Checked" Unchecked="chk_f1p4Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f1p4Description" HorizontalAlignment="Left" Height="23" Margin="101,637,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="23,639,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 2 action" HorizontalAlignment="Left" Margin="294,552,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f2p4Action" HorizontalAlignment="Left" Margin="300,581,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f2p4Action" HorizontalAlignment="Left" Height="23" Margin="425,586,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f2p4Manual" Content="Manual" HorizontalAlignment="Left" Margin="425,614,0,0" VerticalAlignment="Top" Checked="chk_f2p4Manual_Checked" Unchecked="chk_f2p4Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f2p4Description" HorizontalAlignment="Left" Height="23" Margin="378,637,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="300,639,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 3 action" HorizontalAlignment="Left" Margin="579,552,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f3p4Action" HorizontalAlignment="Left" Margin="585,581,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f3p4Action" HorizontalAlignment="Left" Height="23" Margin="710,586,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f3p4Manual" Content="Manual" HorizontalAlignment="Left" Margin="710,614,0,0" VerticalAlignment="Top" Checked="chk_f3p4Manual_Checked" Unchecked="chk_f3p4Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f3p4Description" HorizontalAlignment="Left" Height="23" Margin="663,637,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="585,639,0,0" VerticalAlignment="Top"/>
+        <Label Content="Field 4 action" HorizontalAlignment="Left" Margin="845,560,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbx_f4p4Action" HorizontalAlignment="Left" Margin="851,589,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_f4p4Action" HorizontalAlignment="Left" Height="23" Margin="976,594,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chk_f4p4Manual" Content="Manual" HorizontalAlignment="Left" Margin="976,622,0,0" VerticalAlignment="Top" Checked="chk_f4p4Manual_Checked" Unchecked="chk_f4p4Manual_Unchecked"/>
+        <TextBox x:Name="tbx_f4p4Description" HorizontalAlignment="Left" Height="23" Margin="929,645,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" MaxLength="8"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="851,647,0,0" VerticalAlignment="Top"/>
+        <Label Content="Page 1" HorizontalAlignment="Left" Margin="1089,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Page 2" HorizontalAlignment="Left" Margin="1089,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="Page 3" HorizontalAlignment="Left" Margin="1089,373,0,0" VerticalAlignment="Top"/>
+        <Label Content="Page 4" HorizontalAlignment="Left" Margin="1089,538,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="10,703,0,0" VerticalAlignment="Top" Width="554" Click="btn_save_Click"  Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="569,703,0,0" VerticalAlignment="Top" Width="565" Click="btn_cancel_Click"  Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+        <Button x:Name="btn_profileLoad" Content="Load" HorizontalAlignment="Left" Margin="900,6,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileLoad_Click"/>
+
+    </Grid>
+</Window>
