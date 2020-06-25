@@ -526,7 +526,7 @@ namespace USBMediaController
                 }
                 SetAllInfoControls();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 ShowSysTrayInfo("USBMediaController", exception.Message, BalloonIcon.Error);
                 ConsoleWrite("#ERROR: " + exception.Message);
@@ -574,7 +574,7 @@ namespace USBMediaController
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            if(e.ChangedButton == MouseButton.Left) this.DragMove();
         }
 
         private void btn_clearConsole_Click(object sender, RoutedEventArgs e)
@@ -583,8 +583,8 @@ namespace USBMediaController
         }
 
 
-        #endregion
 
+        #endregion
 
     }
 }

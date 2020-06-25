@@ -669,7 +669,7 @@ namespace USBMediaController
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
 
 
