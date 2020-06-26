@@ -239,9 +239,21 @@ namespace USBMediaController
                     keybd_event((byte)0x5B, 0, KEYEVENTF_KEYUP | 0, 0);
                     keybd_event((byte)0xBB, 0, KEYEVENTF_KEYUP | 0, 0);
                 }
-                else if (commandSource == "RTW!")
+                else if (commandSource == "RTW!") //Ready To Write
                 {
                     InitializeDevice();
+                }
+                else if (commandSource == "GAD!") //Get Actual Data
+                {
+                    ConsoleWrite(">> Sending GAD Data!");
+                    Thread.Sleep(10);
+                    SendUART("Test1", 1);
+                    Thread.Sleep(10);
+                    SendUART("Test2", 1);
+                    Thread.Sleep(10);
+                    SendUART("Test3", 1);
+                    Thread.Sleep(10);
+                    SendUART("Test4", 1);
                 }
                 else
                 {
