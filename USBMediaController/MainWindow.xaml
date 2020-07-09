@@ -29,7 +29,7 @@
         <Button x:Name="btn_ConnectionSettings" Content="ustawienia połączenia" HorizontalAlignment="Left" Margin="276,338,0,0" VerticalAlignment="Top" Width="181" Click="btn_ConnectionSettings_Click"/>
         <Button x:Name="btn_CommandSettings" Content="ustawienia zawartości" HorizontalAlignment="Left" Margin="276,375,0,0" VerticalAlignment="Top" Width="181" Click="btn_CommandSettings_Click"/>
         <Button x:Name="btn_connect" Content="Połącz" HorizontalAlignment="Left" Margin="462,301,0,0" VerticalAlignment="Top" Width="320" Click="btn_connect_Click" Height="108"/>
-        <TextBox x:Name="tbx_console" HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="374" Width="261" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" IsEnabled="False"/>
+        <TextBox x:Name="tbx_console" HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="374" Width="261" ScrollViewer.VerticalScrollBarVisibility="Visible" IsEnabled="True" IsReadOnly="True"/>
         <Label Content="Console" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="261"/>
         <tb:TaskbarIcon x:Name="tray_main"  ToolTipText="hello world" >
             <tb:TaskbarIcon.TrayToolTip>
@@ -59,6 +59,7 @@
         <Label x:Name="lbl_selectedProfile" Content="---" HorizontalAlignment="Left" Margin="390,248,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_sendData" Content="Send data" HorizontalAlignment="Left" Margin="678,264,0,0" VerticalAlignment="Top" Width="100" Click="btn_sendData_Click" Style="{StaticResource MaterialDesignToolButton}"/>
         <Label Content="USB Media Controller v2.0" HorizontalAlignment="Left" Margin="485,4,0,0" VerticalAlignment="Top" Foreground="#FF646464"/>
+        <ProgressBar HorizontalAlignment="Left" Height="32" Margin="678,264,0,0" VerticalAlignment="Top" Width="100" x:Name="pbarSendUartData"/>
     </Grid>
 
 </Window>

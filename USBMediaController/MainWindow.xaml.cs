@@ -38,6 +38,7 @@ namespace USBMediaController
         Container_ControllerConfig controllerConfig = new Container_ControllerConfig();
         string recivedData;
         string commandTmp="";
+        string uartReciverBuffer = "";
 
         private delegate void UpdateUiTextDelegate(string text);
         #endregion
@@ -47,7 +48,10 @@ namespace USBMediaController
         public MainWindow()
         {
             InitializeComponent();
-            
+            pbarSendUartData.Maximum = 16;
+            pbarSendUartData.Minimum = 0;
+            pbarSendUartData.Value = 0;
+            pbarSendUartData.Visibility = Visibility.Hidden;
 
             if(File.Exists(@"C:\USBMediaControllerv2\icon.ico")) tray_main.Icon = new System.Drawing.Icon(@"C:\USBMediaControllerv2\icon.ico");
             else ConsoleWrite("#Error Load Icon");
@@ -107,38 +111,63 @@ namespace USBMediaController
             }
         }
 
-        private void InitializeDevice()
+        private async void InitializeDevice()
         {
-            int id = 0;
-            for (int clk = 0; clk < controllerConfig.list.Count; clk++) if (controllerConfig.list[clk].getLabel() == controllerConfig.getSelectedLabel()) id = clk;
-            for (int clk = 0; clk < 4; clk++)
+            btn_sendData.Visibility = Visibility.Hidden;
+            btn_sendData.Opacity = 0;
+            pbarSendUartData.Visibility = Visibility.Visible;
+            pbarSendUartData.Value = 0;
+            pbarSendUartData.Opacity = 1;
+            await Task.Run(() =>
             {
-                SendUART(controllerConfig.list[id].getPage1(clk).getDescription(), 1);
-                SendUART("\n", 1);
-                ConsoleWrite("<--: " + controllerConfig.list[id].getPage1(clk).getDescription());
+                int id = 0;
+               
+                for (int clk = 0; clk < controllerConfig.list.Count; clk++) if (controllerConfig.list[clk].getLabel() == controllerConfig.getSelectedLabel()) id = clk;
+                for (int clk = 0; clk < 4; clk++)
+                {
+                    SendUART(controllerConfig.list[id].getPage1(clk).getDescription(), 1);
+                    SendUART("\n", 1);
+                    tbx_console.Dispatcher.Invoke(() => ConsoleWrite("<--: " + controllerConfig.list[id].getPage1(clk).getDescription()));
+                    Thread.Sleep(200);
+                    pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Value++);
+                    
+                }
+                for (int clk = 0; clk < 4; clk++)
+                {
+                    SendUART(controllerConfig.list[id].getPage2(clk).getDescription(), 1);
+                    SendUART("\n", 1);
+                    tbx_console.Dispatcher.Invoke(() => ConsoleWrite("<--: " + controllerConfig.list[id].getPage2(clk).getDescription()));
+                    Thread.Sleep(200);
+                    pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Value++);
+                  
+                }
+                for (int clk = 0; clk < 4; clk++)
+                {
+                    SendUART(controllerConfig.list[id].getPage3(clk).getDescription(), 1);
+                    SendUART("\n", 1);
+                    tbx_console.Dispatcher.Invoke(() => ConsoleWrite("<--: " + controllerConfig.list[id].getPage3(clk).getDescription()));
+                    Thread.Sleep(200);
+                    pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Value++);
+                  
+                }
+                for (int clk = 0; clk < 4; clk++)
+                {
+                    SendUART(controllerConfig.list[id].getPage4(clk).getDescription(), 1);
+                    SendUART("\n", 1);
+                    tbx_console.Dispatcher.Invoke(() => ConsoleWrite("<--: " + controllerConfig.list[id].getPage4(clk).getDescription()));
+                    Thread.Sleep(200);
+                    pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Value++);
+      
+                }
+
+                for (int clk = 0; clk < 10; clk++) { pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Opacity -= 0.1); Thread.Sleep(50); }
+                btn_sendData.Dispatcher.Invoke(() => btn_sendData.Visibility = Visibility.Visible);
+                for (int clk = 0; clk < 10; clk++) { btn_sendData.Dispatcher.Invoke(() => btn_sendData.Opacity += 0.1); Thread.Sleep(50); }
                 Thread.Sleep(200);
-            }
-            for (int clk = 0; clk < 4; clk++)
-            {
-                SendUART(controllerConfig.list[id].getPage2(clk).getDescription(), 1);
-                SendUART("\n", 1);
-                ConsoleWrite("<--: " + controllerConfig.list[id].getPage2(clk).getDescription());
-                Thread.Sleep(200);
-            }
-            for (int clk = 0; clk < 4; clk++)
-            {
-                SendUART(controllerConfig.list[id].getPage3(clk).getDescription(), 1);
-                SendUART("\n", 1);
-                ConsoleWrite("<--: " + controllerConfig.list[id].getPage3(clk).getDescription());
-                Thread.Sleep(200);
-            }
-            for (int clk = 0; clk < 4; clk++)
-            {
-                SendUART(controllerConfig.list[id].getPage4(clk).getDescription(), 1);
-                SendUART("\n", 1);
-                ConsoleWrite("<--: " + controllerConfig.list[id].getPage4(clk).getDescription());
-                Thread.Sleep(200);
-            }
+                pbarSendUartData.Dispatcher.Invoke(() => pbarSendUartData.Visibility = Visibility.Hidden);
+                
+            });
+
         }
 
         private string getConnectionStatus()
@@ -177,6 +206,7 @@ namespace USBMediaController
             {
                 string commandSource = commandTmp.Substring(0, 4);
                 commandTmp = "";
+                //ConsoleWrite("$"+commandSource);
 
                 // comands list: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
                 if (controllerConfig.getCommandByID(commandSource, controllerConfig.getSelectedLabel()) == "Mute")
@@ -243,18 +273,18 @@ namespace USBMediaController
                 {
                     InitializeDevice();
                 }
-                else if (commandSource == "GAD!") //Get Actual Data
-                {
-                    ConsoleWrite(">> Sending GAD Data!");
-                    Thread.Sleep(10);
-                    SendUART("Test1", 1);
-                    Thread.Sleep(10);
-                    SendUART("Test2", 1);
-                    Thread.Sleep(10);
-                    SendUART("Test3", 1);
-                    Thread.Sleep(10);
-                    SendUART("Test4", 1);
-                }
+                //else if (commandSource == "GAD!") //Get Actual Data
+                //{
+                //    ConsoleWrite(">> Sending GAD Data!");
+                //    Thread.Sleep(10);
+                //    SendUART("Test1", 1);
+                //    Thread.Sleep(10);
+                //    SendUART("Test2", 1);
+                //    Thread.Sleep(10);
+                //    SendUART("Test3", 1);
+                //    Thread.Sleep(10);
+                //    SendUART("Test4", 1);
+                //}
                 else
                 {
                     System.Diagnostics.Process.Start("CMD.exe", @"C:\Windows\System32\cmd.exe /k " + controllerConfig.getCommandByID(commandSource, controllerConfig.getSelectedLabel()));
@@ -304,18 +334,27 @@ namespace USBMediaController
             recivedData = connectionInfo.serial.ReadExisting();
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UseRecivedData), recivedData);
         }
+
+
+        
         private void UseRecivedData(string text)
         {
-            CheckInputCommand(text);
-            tbx_console.Text += text;
-            tbx_console.Focus();
-            tbx_console.CaretIndex = tbx_console.Text.Length;
-            tbx_console.ScrollToEnd();
+            uartReciverBuffer += text;
+            if(uartReciverBuffer.Length >4)
+            {
+                CheckInputCommand(uartReciverBuffer);
+                ConsoleWrite(uartReciverBuffer);
+                uartReciverBuffer = "";
+            }
         }
 
         private void ConsoleWrite(string val)
         {
             tbx_console.Text += val + "\n";
+
+
+            tbx_console.SelectionStart = tbx_console.Text.Length;
+            tbx_console.ScrollToEnd();
         }
 
         #endregion
