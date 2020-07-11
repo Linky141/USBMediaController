@@ -475,6 +475,16 @@ namespace USBMediaController
             this.Close();
         }
 
+        private void btn_profileDelete_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
+        }
+
+        private void btn_profileOverwrite_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
+        }
+
         private void chk_f1p1Manual_Checked(object sender, RoutedEventArgs e)
         {
             tbx_f1p1Action.IsEnabled = true;
@@ -681,6 +691,8 @@ namespace USBMediaController
         public bool Apply() { return apply; }
 
         public Container_ControllerConfig GetConfig() { return container; }
+
+
 
 
 
