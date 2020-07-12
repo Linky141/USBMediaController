@@ -13,9 +13,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:USBMediaController"
         mc:Ignorable="d"
-        Title="ControlerConfigAddItem" Height="84.549" Width="391.65" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Window_MouseDown" ResizeMode="NoResize">
+        Title="ControlerConfigAddItem" Height="84.549" Width="391.65" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Window_MouseDown" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="tbx_name" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="364"/>
+        <TextBox x:Name="tbx_name" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="364" KeyDown="tbx_name_KeyDown"/>
         <Button x:Name="btn_add" Content="Add" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="174" Click="btn_add_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
         <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="189,38,0,0" VerticalAlignment="Top" Width="185" Click="btn_cancel_Click"  Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
 

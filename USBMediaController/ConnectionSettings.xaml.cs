@@ -33,6 +33,7 @@ namespace USBMediaController
             cbx_stopBits.SelectedValue = this.connectionInfo.getStopBits().ToString();
             tbx_readTimeout.Text = this.connectionInfo.getReadTimeout().ToString();
             tbx_writeTimeout.Text = this.connectionInfo.getWriteTimeout().ToString();
+            //CenterWindowOnScreen();
         }
 
         /*
@@ -50,7 +51,15 @@ namespace USBMediaController
 
 
 
-
+   /*     private void CenterWindowOnScreen()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }*/
 
 
         /*

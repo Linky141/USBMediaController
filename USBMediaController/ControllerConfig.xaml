@@ -13,7 +13,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:USBMediaController"
         mc:Ignorable="d"
-        Title="ControllerConfig" Height="744.207" Width="1144.276" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" MouseDown="Window_MouseDown">
+        Title="ControllerConfig" Height="744.207" Width="1144.276" WindowStyle="None" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,43,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
         <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="160" Margin="7,208,0,0" Stroke="White" VerticalAlignment="Top" Width="1128"/>
@@ -22,7 +22,7 @@
         <Label Content="Profile" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="67"/>
         <ComboBox x:Name="cbx_profile" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="737"/>
         <Button x:Name="btn_profileSave" Content="Save" HorizontalAlignment="Left" Margin="902,5,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileSave_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
-        <Button x:Name="btn_profileDelete" Content="(TODO) Delete" HorizontalAlignment="Left" Margin="1062,5,0,0" VerticalAlignment="Top" Width="75"  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="btn_profileDelete_Click"/>
+        <Button x:Name="btn_profileDelete" Content="Delete" HorizontalAlignment="Left" Margin="1062,5,0,0" VerticalAlignment="Top" Width="75"  Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="btn_profileDelete_Click"/>
         <Label Content="Field 1 action" HorizontalAlignment="Left" Margin="23,66,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbx_f1p1Action" HorizontalAlignment="Left" Margin="29,95,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbx_f1p1Action" HorizontalAlignment="Left" Height="23" Margin="154,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
@@ -126,7 +126,7 @@
         <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="10,703,0,0" VerticalAlignment="Top" Width="554" Click="btn_save_Click"  Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
         <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="569,703,0,0" VerticalAlignment="Top" Width="565" Click="btn_cancel_Click"  Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
         <Button x:Name="btn_profileLoad" Content="Load" HorizontalAlignment="Left" Margin="822,5,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileLoad_Click"/>
-        <Button x:Name="btn_profileOverwrite" Content="(TODO) Update" HorizontalAlignment="Left" Margin="982,5,0,0" Padding="0,0,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileOverwrite_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+        <Button x:Name="btn_profileOverwrite" Content="Update" HorizontalAlignment="Left" Margin="982,5,0,0" Padding="0,0,0,0" VerticalAlignment="Top" Width="75" Click="btn_profileOverwrite_Click" Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
 
     </Grid>
 </Window>

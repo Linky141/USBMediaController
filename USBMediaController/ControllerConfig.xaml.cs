@@ -34,6 +34,7 @@ namespace USBMediaController
             InitializeComponent();
             FillComboBox();
             RefreshProfileComboBox();
+            //CenterWindowOnScreen();
         }
 
         public ControllerConfig(Container_ControllerConfig container)
@@ -42,6 +43,7 @@ namespace USBMediaController
             FillComboBox();
             this.container = container;
             RefreshProfileComboBox();
+            //CenterWindowOnScreen();
         }
 
         #endregion
@@ -49,7 +51,17 @@ namespace USBMediaController
         //------------------------------------------------------------------------------------
         #region METHODS
 
-            private bool CheckCheckBoxExistingValue(ComboBox cbx, string val) {
+       /* private void CenterWindowOnScreen()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+*/
+        private bool CheckCheckBoxExistingValue(ComboBox cbx, string val) {
             if (cbx.Items.Contains(val)) return true;
             else return false;
             }
@@ -477,12 +489,73 @@ namespace USBMediaController
 
         private void btn_profileDelete_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            int index = cbx_profile.SelectedIndex;
+            container.list.RemoveAt(index);
+            RefreshProfileComboBox();
+            if (index <= container.list.Count-1) cbx_profile.SelectedIndex = index;
+            else cbx_profile.SelectedIndex = index - 1;
+            Object tmpObj=null;
+            RoutedEventArgs tmpREA=null;
+            btn_profileLoad_Click(tmpObj, tmpREA);
         }
 
         private void btn_profileOverwrite_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            int index = cbx_profile.SelectedIndex;
+
+
+                if (chk_f1p1Manual.IsChecked == true) container.list[index].setPage1(0, new Container_SingleCommand(tbx_f1p1Action.Text, tbx_f1p1Description.Text, "aa11"));
+                else container.list[index].setPage1(0, new Container_SingleCommand(cbx_f1p1Action.SelectedItem.ToString(), tbx_f1p1Description.Text, "aa11"));
+
+                if (chk_f2p1Manual.IsChecked == true) container.list[index].setPage1(1, new Container_SingleCommand(tbx_f2p1Action.Text, tbx_f2p1Description.Text, "aa22"));
+                else container.list[index].setPage1(1, new Container_SingleCommand(cbx_f2p1Action.SelectedItem.ToString(), tbx_f2p1Description.Text, "aa22"));
+
+                if (chk_f3p1Manual.IsChecked == true) container.list[index].setPage1(2, new Container_SingleCommand(tbx_f3p1Action.Text, tbx_f3p1Description.Text, "aa33"));
+                else container.list[index].setPage1(2, new Container_SingleCommand(cbx_f3p1Action.SelectedItem.ToString(), tbx_f3p1Description.Text, "aa33"));
+
+                if (chk_f4p1Manual.IsChecked == true) container.list[index].setPage1(3, new Container_SingleCommand(tbx_f4p1Action.Text, tbx_f4p1Description.Text, "aa44"));
+                else container.list[index].setPage1(3, new Container_SingleCommand(cbx_f4p1Action.SelectedItem.ToString(), tbx_f4p1Description.Text, "aa44"));
+
+
+                if (chk_f1p2Manual.IsChecked == true) container.list[index].setPage2(0, new Container_SingleCommand(tbx_f1p2Action.Text, tbx_f1p2Description.Text, "bb11"));
+                else container.list[index].setPage2(0, new Container_SingleCommand(cbx_f1p2Action.SelectedItem.ToString(), tbx_f1p2Description.Text, "bb11"));
+
+                if (chk_f2p2Manual.IsChecked == true) container.list[index].setPage2(1, new Container_SingleCommand(tbx_f2p2Action.Text, tbx_f2p2Description.Text, "bb22"));
+                else container.list[index].setPage2(1, new Container_SingleCommand(cbx_f2p2Action.SelectedItem.ToString(), tbx_f2p2Description.Text, "bb22"));
+
+                if (chk_f3p2Manual.IsChecked == true) container.list[index].setPage2(2, new Container_SingleCommand(tbx_f3p2Action.Text, tbx_f3p2Description.Text, "bb33"));
+                else container.list[index].setPage2(2, new Container_SingleCommand(cbx_f3p2Action.SelectedItem.ToString(), tbx_f3p2Description.Text, "bb33"));
+
+                if (chk_f4p2Manual.IsChecked == true) container.list[index].setPage2(3, new Container_SingleCommand(tbx_f4p2Action.Text, tbx_f4p2Description.Text, "bb44"));
+                else container.list[index].setPage2(3, new Container_SingleCommand(cbx_f4p2Action.SelectedItem.ToString(), tbx_f4p2Description.Text, "bb44"));
+
+
+                if (chk_f1p3Manual.IsChecked == true) container.list[index].setPage3(0, new Container_SingleCommand(tbx_f1p3Action.Text, tbx_f1p3Description.Text, "cc11"));
+                else container.list[index].setPage3(0, new Container_SingleCommand(cbx_f1p3Action.SelectedItem.ToString(), tbx_f1p3Description.Text, "cc11"));
+
+                if (chk_f2p3Manual.IsChecked == true) container.list[index].setPage3(1, new Container_SingleCommand(tbx_f2p3Action.Text, tbx_f2p3Description.Text, "cc22"));
+                else container.list[index].setPage3(1, new Container_SingleCommand(cbx_f2p3Action.SelectedItem.ToString(), tbx_f2p3Description.Text, "cc22"));
+
+                if (chk_f3p3Manual.IsChecked == true) container.list[index].setPage3(2, new Container_SingleCommand(tbx_f3p3Action.Text, tbx_f3p3Description.Text, "cc33"));
+                else container.list[index].setPage3(2, new Container_SingleCommand(cbx_f3p3Action.SelectedItem.ToString(), tbx_f3p3Description.Text, "cc33"));
+
+                if (chk_f4p3Manual.IsChecked == true) container.list[index].setPage3(3, new Container_SingleCommand(tbx_f4p3Action.Text, tbx_f4p3Description.Text, "cc44"));
+                else container.list[index].setPage3(3, new Container_SingleCommand(cbx_f4p3Action.SelectedItem.ToString(), tbx_f4p3Description.Text, "cc44"));
+
+
+                if (chk_f1p4Manual.IsChecked == true) container.list[index].setPage4(0, new Container_SingleCommand(tbx_f1p4Action.Text, tbx_f1p4Description.Text, "dd11"));
+                else container.list[index].setPage4(0, new Container_SingleCommand(cbx_f1p4Action.SelectedItem.ToString(), tbx_f1p4Description.Text, "dd11"));
+
+                if (chk_f2p4Manual.IsChecked == true) container.list[index].setPage4(1, new Container_SingleCommand(tbx_f2p4Action.Text, tbx_f2p4Description.Text, "dd22"));
+                else container.list[index].setPage4(1, new Container_SingleCommand(cbx_f2p4Action.SelectedItem.ToString(), tbx_f2p4Description.Text, "dd22"));
+
+                if (chk_f3p4Manual.IsChecked == true) container.list[index].setPage4(2, new Container_SingleCommand(tbx_f3p4Action.Text, tbx_f3p4Description.Text, "dd33"));
+                else container.list[index].setPage4(2, new Container_SingleCommand(cbx_f3p4Action.SelectedItem.ToString(), tbx_f3p4Description.Text, "dd33"));
+
+                if (chk_f4p4Manual.IsChecked == true) container.list[index].setPage4(3, new Container_SingleCommand(tbx_f4p4Action.Text, tbx_f4p4Description.Text, "dd44"));
+                else container.list[index].setPage4(3, new Container_SingleCommand(cbx_f4p4Action.SelectedItem.ToString(), tbx_f4p4Description.Text, "dd44"));
+
+                RefreshProfileComboBox();
         }
 
         private void chk_f1p1Manual_Checked(object sender, RoutedEventArgs e)

@@ -24,15 +24,19 @@ namespace USBMediaController
         public ControlerConfigAddItem()
         {
             InitializeComponent();
+            tbx_name.Focus();
         }
 
         public bool Apply() { return apply; }
         public string getName() { return name; }
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            apply = true;
-            name = tbx_name.Text;
-            this.Close();
+            if (tbx_name.Text != "")
+            {
+                apply = true;
+                name = tbx_name.Text;
+                this.Close();
+            }
         }
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
@@ -44,6 +48,16 @@ namespace USBMediaController
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) this.DragMove();
+        }
+
+        private void tbx_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                object tmoObj = null;
+                RoutedEventArgs tmpROA = null;
+                btn_add_Click(tmoObj, tmpROA);
+            }
         }
     }
 }
