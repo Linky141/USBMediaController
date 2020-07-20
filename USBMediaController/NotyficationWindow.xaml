@@ -1,0 +1,27 @@
+﻿<Window x:Class="USBMediaController.NotyficationWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"   
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:USBMediaController"
+        mc:Ignorable="d"
+        Title="NotyficationWindow" Height="450" Width="800" WindowStyle="None" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="119"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnA" Content="" Margin="10,9,10,0" VerticalAlignment="Top" Height="48" Click="btnA_Click" Grid.Row="1"/>
+        <Button x:Name="btnB" Content="" Margin="10,61,10,0" VerticalAlignment="Top" Height="48" Click="btnB_Click" Grid.Row="1"/>
+        <TextBox x:Name="tbxInformation"  Margin="10"  Text="" TextWrapping="Wrap" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible" IsEnabled="True" IsReadOnly="True"/>
+
+    </Grid>
+</Window>

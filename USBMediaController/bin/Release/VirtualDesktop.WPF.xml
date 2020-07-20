@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtualDesktop.WPF</name>
+    </assembly>
+    <members>
+        <member name="M:WindowsDesktop.ApplicationExtensions.IsPinned(System.Windows.Application)">
+            <summary>
+            Determines whether this application is pinned.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.ApplicationExtensions.Pin(System.Windows.Application)">
+            <summary>
+            Pins an application, showing it on all virtual desktops.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.ApplicationExtensions.Unpin(System.Windows.Application)">
+            <summary>
+            Unpins an application.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.ApplicationExtensions.TogglePin(System.Windows.Application)">
+            <summary>
+            Toggles an application between being pinned and unpinned.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.IsCurrentVirtualDesktop(System.Windows.Window)">
+            <summary>
+            Determines whether this window is on the current virtual desktop.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.GetCurrentDesktop(System.Windows.Window)">
+            <summary>
+            Returns the virtual desktop this window is located on.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.MoveToDesktop(System.Windows.Window,WindowsDesktop.VirtualDesktop)">
+            <summary>
+            Moves a window to the specified virtual desktop.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.SwitchAndMove(WindowsDesktop.VirtualDesktop,System.Windows.Window)">
+            <summary>
+            Switches to a virtual desktop and moves the specified window to that desktop.
+            </summary>
+            <param name="virtualDesktop">The virtual desktop to move the window to.</param>
+            <param name="window">The window to move.</param>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.IsPinned(System.Windows.Window)">
+            <summary>
+            Determines whether this window is pinned.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.Pin(System.Windows.Window)">
+            <summary>
+            Pins a window, showing it on all virtual desktops.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.Unpin(System.Windows.Window)">
+            <summary>
+            Unpins a window.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.TogglePin(System.Windows.Window)">
+            <summary>
+            Toggles a window between being pinned and unpinned.
+            </summary>
+        </member>
+        <member name="M:WindowsDesktop.WindowExtensions.GetHandle(System.Windows.Media.Visual)">
+            <summary>
+            Returns the window handle for this <see cref="T:System.Windows.Media.Visual" />.
+            </summary>
+        </member>
+    </members>
+</doc>

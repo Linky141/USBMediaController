@@ -355,6 +355,8 @@ namespace USBMediaController
             actions.Add("Close");
             actions.Add("Run");
             actions.Add("Magnifier");
+            actions.Add("NextDesktop");
+            actions.Add("LastDesktop");
 
             for (int clk = 0; clk < actions.Count; clk++)
             {
@@ -756,6 +758,21 @@ namespace USBMediaController
         }
 
 
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+
+            string comunicat = "Special characters:\n" +
+                "%> - play symbol\n" +
+                "%< - reversed play symbol\n" +
+                "%| - pause symbol\n" +
+                "%} - desktop symbol\n" +
+                "%, - speaker symbol\n" +
+                "%: - padlock symbol\n" +
+                "%; - standby symbol";
+            NotyficationWindow window = new NotyficationWindow(true, comunicat, "Close");
+            window.ShowDialog();
+        }
+
         #endregion
 
         //------------------------------------------------------------------------------------
@@ -764,6 +781,7 @@ namespace USBMediaController
         public bool Apply() { return apply; }
 
         public Container_ControllerConfig GetConfig() { return container; }
+
 
 
 
